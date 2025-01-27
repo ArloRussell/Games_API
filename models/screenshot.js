@@ -16,7 +16,7 @@ async function getAllScreenshots(start = 0, limit = 50, gameid){
 }
 
 async function getScreenshotById(screenshotid){
-    const [rows] = await db.execute("Select * From screenshots Where screenshot_id", [screenshotid]);
+    const [rows] = await db.execute("Select * From screenshots Where screenshot_id = ?", [screenshotid]);
     return rows[0];
 }
 

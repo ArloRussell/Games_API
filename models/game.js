@@ -14,7 +14,7 @@ async function getAllGames(start = 0, limit = 50, like){
 }
 
 async function getGameById(gameid){
-    const [rows] = await db.execute("Select * From games Where game_id", [gameid]);
+    const [rows] = await db.execute("Select * From games Where game_id = ?", [gameid]);
     return rows[0];
 }
 

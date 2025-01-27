@@ -16,7 +16,7 @@ async function getAllGenres(start = 0, limit = 50, gameId){
 }
 
 async function getGenreById(genreid){
-    const [rows] = await db.execute("Select * From genres Where genre_id", [genreid]);
+    const [rows] = await db.execute("Select * From genres Where genre_id = ?", [genreid]);
     return rows[0];
 }
 

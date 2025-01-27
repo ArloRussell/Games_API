@@ -16,7 +16,7 @@ async function getAllCharacters(start = 0, limit = 50, gameId){
 }
 
 async function getCharacterById(charid){
-    const [rows] = await db.execute("Select * From characters Where character_id", [charid]);
+    const [rows] = await db.execute("Select * From characters Where character_id = ?", [charid]);
     return rows[0];
 }
 

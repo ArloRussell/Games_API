@@ -16,7 +16,7 @@ async function getAllPlatforms(start = 0, limit = 50, gameId){
 }
 
 async function getPlatformById(platformid){
-    const [rows] = await db.execute("Select * From platforms Where platform_id", [platformid]);
+    const [rows] = await db.execute("Select * From platforms Where platform_id = ?", [platformid]);
     return rows[0];
 }
 

@@ -16,7 +16,7 @@ async function getAllGameModes(start = 0, limit = 50, gameId){
 }
 
 async function getGameModeById(gamemodeid){
-    const [rows] = await db.execute("Select * From game_modes Where game_mode_id", [gamemodeid]);
+    const [rows] = await db.execute("Select * From game_modes Where game_mode_id = ?", [gamemodeid]);
     return rows[0];
 }
 
