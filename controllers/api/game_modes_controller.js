@@ -1,4 +1,4 @@
-const GameMode = require("../models/game_mode");
+const GameMode = require("../../models/game_mode");
 
 async function getAllGameModes(req, res){
     try{

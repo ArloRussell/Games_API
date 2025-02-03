@@ -1,0 +1,156 @@
+<%- include("partials/header.ejs") %>
+
+<div class="col-10 mx-auto mt-5">
+
+    <!-- ROW ONG >> Cover & Title + Sum -->
+    <div class="row mb-3">
+        <div class="col-lg-3 pe-lg-1 d-flex justify-content-center mb-2 mb-lg-0">
+            <div class="card p-2 cov-card" style="background-image: url('<%= // game.cover.replace(`t_thumb`, `t_720p`)%>')"></div>
+        </div>
+        <div class="col-lg-9 ps-lg-1">
+            <div class="card p-2 h-100">
+                <div class="card-body">
+                    <h1 class="card-title game-title colorful-text">
+                        <%= // game.name %>
+                    </h1>
+                    <p class="card-text game-sum">
+                        <%= // game.summary %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROW TWO >> Genres & Game Modes & Platforms -->
+    <div class="row mb-3">
+        <div class="col-lg-4 pe-lg-2 mb-2 mb-lg-0">
+            <div class="card p-2 h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center colorful-text">
+                        Genres
+                    </h2>
+
+                    <ul>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 px-lg-2 mb-2 mb-lg-0">
+            <div class="card p-2 h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center colorful-text">
+                        Game Modes
+                    </h2>
+
+                    <ul>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 ps-lg-2 mb-2 mb-lg-0">
+            <div class="card p-2 h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center colorful-text">
+                        Platforms
+                    </h2>
+
+                    <ul>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROW THREE >> Characters -->
+    <div class="card p-2 mb-3">
+        <h2 class="card-title text-center colorful-text">
+            Characters
+        </h2>
+
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <ul>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <ul>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROW FOUR >> Websites -->
+     <div class="card p-2 mb-3">
+        <h2 class="card-title text-center colorful-text">
+            Websites
+        </h2>
+        <div class="d-flex justify-content-center">
+            <ul>
+                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
+                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
+                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
+                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
+                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
+            </ul>
+        </div>
+     </div>
+
+     <!-- ROW FIVE >> Screenshots -->
+     <div class="card p-2 mb-3">
+        <h2 class="card-title text-center colorful-text">
+            Screenshots
+        </h2>
+        <div class="card border-0">
+            <img src="" alt="">
+            <p>There may be images here</p>
+        </div>
+     </div>
+
+     <!-- ROW SIX >> Similar Games -->
+    <div class="card p-2 mb-1">
+        <h2 class="card-title text-center colorful-text">
+            Similar Games
+        </h2>
+    </div>
+     <% // for(let game of gameData) { %>
+        <a href="/game/<%= // game.game_id%>" class="unstyled-link text-decoration-none">
+            <div class="card mb-2">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src='<%= // game.cover.replace("t_thumb", "t_720p")%>' alt="" class="card-img">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="card-body">
+                            <h5 class="card-title colorful-text"><%= // game.name %></h5>
+                            <p class="card-text"><%= // game.summary %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    <% // } %>
+</div>
+
+<%- include("partials/footer.ejs") %>

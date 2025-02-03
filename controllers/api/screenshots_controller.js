@@ -1,4 +1,4 @@
-const Screenshot = require("../models/screenshot");
+const Screenshot = require("../../models/screenshot");
 
 async function getAllScreenshots(req, res){
     try{

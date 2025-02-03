@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const platformsController = require("../controllers/platforms_controller");
+const genresController = require("../../controllers/api/genres_controller");
 
 /**
  * @swagger
- * /api/platforms:
+ * /api/genres:
  *   get:
  *     tags:
- *       - platforms
- *     summary: Get all platforms (default to limit of 50)
+ *       - genres
+ *     summary: Get all genres (default to limit of 50)
  *     parameters:
  *         - in: query
  *           name: start
@@ -18,24 +18,24 @@ const platformsController = require("../controllers/platforms_controller");
  *           name: gameid
  *     responses:
  *       200:
- *         description: A list of platforms
+ *         description: A list of genres
  */
-router.get("/", platformsController.getAllPlatforms);
+router.get("/", genresController.getAllGenres);
 
 /**
  * @swagger
- * /api/platforms/{id}:
+ * /api/genres/{id}:
  *   get:
  *     tags:
- *       - platforms
- *     summary: Get a platform by its id
+ *       - genres
+ *     summary: Get a genre by its id
  *     parameters:
  *        - in: path
  *          name: id
  *     responses:
  *       200:
- *         description: A specific platform
+ *         description: A specific genre
  */
-router.get("/:id", platformsController.getPlatformById);
+router.get("/:id", genresController.getGenreById);
 
 module.exports = router;
