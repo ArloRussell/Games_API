@@ -21,7 +21,7 @@ app.use("/api/platforms", platformRoutes);
 app.use("/api/screenshots", screenshotRoutes);
 app.use("/api/characters", characterRoutes);
 app.use("/api/genres", genreRoutes);
-app.use("/api/game_modes", gamemodeRoutes);
+app.use("/api/game-modes", gamemodeRoutes);
 app.use("/api/websites", websiteRoutes);
 app.use("/api/covers", coverRoutes);
 app.use("/api/similar", similarRoutes);

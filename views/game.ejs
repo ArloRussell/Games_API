@@ -5,16 +5,24 @@
     <!-- ROW ONG >> Cover & Title + Sum -->
     <div class="row mb-3">
         <div class="col-lg-3 pe-lg-1 d-flex justify-content-center mb-2 mb-lg-0">
-            <div class="card p-2 cov-card" style="background-image: url('<%= // game.cover.replace(`t_thumb`, `t_720p`)%>')"></div>
+            <div class="card p-2 cov-card" style="background-image: url('<%= gameData.cover.replace(`t_thumb`, `t_720p`)%>')"></div>
         </div>
         <div class="col-lg-9 ps-lg-1">
             <div class="card p-2 h-100">
                 <div class="card-body">
                     <h1 class="card-title game-title colorful-text">
-                        <%= // game.name %>
+                        <% if(gameData.name){ %>
+                            <%= gameData.name %>
+                        <% }else{ %>
+                            Game Name
+                        <% } %>
                     </h1>
                     <p class="card-text game-sum">
-                        <%= // game.summary %>
+                        <% if(gameData.summary){ %>
+                            <%= gameData.summary %>
+                        <% }else{ %>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam labore odio molestias quis reprehenderit alias perferendis inventore neque corrupti necessitatibus velit magnam laboriosam nobis, beatae natus voluptatem illo? Quasi qui ex officia illum enim, velit dolores veritatis, amet modi sint labore expedita, vero nihil voluptatibus autem cupiditate cum a architecto placeat nostrum. Iste architecto quod amet, quisquam voluptates magnam labore sapiente debitis iure vitae distinctio earum aut consequuntur alias molestiae ea cumque quasi facilis minus eum id. Perferendis, dolor culpa?
+                        <% } %>
                     </p>
                 </div>
             </div>
@@ -30,12 +38,17 @@
                         Genres
                     </h2>
 
-                    <ul>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    </ul>
+                    <% if(gameData.genres){ %>
+                        <ul>
+                            <% for(let genre of gameData.genres) { %>
+                                <li class="colorful-text-stat">
+                                    <span class="text-body"><%= genre.name %></span>
+                                </li>
+                            <% } %>
+                        </ul>
+                    <%}else{%>
+                        <p>No Data Found :&lpar;</p>
+                    <%}%>
                 </div>
             </div>
         </div>
@@ -46,12 +59,17 @@
                         Game Modes
                     </h2>
 
-                    <ul>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    </ul>
+                    <% if(gameData.modes){ %>
+                        <ul>
+                            <% for(let mode of gameData.modes) { %>
+                                <li class="colorful-text-stat">
+                                    <span class="text-body"><%= mode.name %></span>
+                                </li>
+                            <% } %>
+                        </ul>
+                    <%}else{%>
+                        <p>No Data Found :&lpar;</p>
+                    <%}%>
                 </div>
             </div>
         </div>
@@ -62,12 +80,17 @@
                         Platforms
                     </h2>
 
-                    <ul>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                        <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    </ul>
+                    <% if(gameData.platforms){ %>
+                        <ul>
+                            <% for(let platform of gameData.platforms) { %>
+                                <li class="colorful-text-stat">
+                                    <span class="text-body"><%= platform.name %></span>
+                                </li>
+                            <% } %>
+                        </ul>
+                    <%}else{%>
+                        <p>No Data Found :&lpar;</p>
+                    <%}%>
                 </div>
             </div>
         </div>
@@ -143,8 +166,20 @@
                     </div>
                     <div class="col-md-10">
                         <div class="card-body">
-                            <h5 class="card-title colorful-text"><%= // game.name %></h5>
-                            <p class="card-text"><%= // game.summary %></p>
+                            <h5 class="card-title colorful-text">
+                                <% // if(game.name){ %>
+                                    <%= // game.name %>
+                                <% // }else{ %>
+                                    Game Name
+                                <% // } %>
+                            </h5>
+                            <p class="card-text">
+                                <% // if(game.summary){ %>
+                                    <%= // game.summary %>
+                                <% // }else{ %>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam labore odio molestias quis reprehenderit alias perferendis inventore neque corrupti necessitatibus velit magnam laboriosam nobis, beatae natus voluptatem illo? Quasi qui ex officia illum enim, velit dolores veritatis, amet modi sint labore expedita, vero nihil voluptatibus autem cupiditate cum a architecto placeat nostrum. Iste architecto quod amet, quisquam voluptates magnam labore sapiente debitis iure vitae distinctio earum aut consequuntur alias molestiae ea cumque quasi facilis minus eum id. Perferendis, dolor culpa?
+                                <% // } %>
+                            </p>
                         </div>
                     </div>
                 </div>
