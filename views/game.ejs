@@ -38,11 +38,11 @@
                         Genres
                     </h2>
 
-                    <% if(gameData.genres){ %>
+                    <% if(gameData.genres && gameData.genres.length > 0){ %>
                         <ul>
                             <% for(let genre of gameData.genres) { %>
                                 <li class="colorful-text-stat">
-                                    <span class="text-body"><%= genre.name %></span>
+                                    <span class="text-white"><%= genre.name %></span>
                                 </li>
                             <% } %>
                         </ul>
@@ -59,11 +59,11 @@
                         Game Modes
                     </h2>
 
-                    <% if(gameData.modes){ %>
+                    <% if(gameData.modes && gameData.modes.length > 0){ %>
                         <ul>
                             <% for(let mode of gameData.modes) { %>
                                 <li class="colorful-text-stat">
-                                    <span class="text-body"><%= mode.name %></span>
+                                    <span class="text-white"><%= mode.name %></span>
                                 </li>
                             <% } %>
                         </ul>
@@ -80,11 +80,11 @@
                         Platforms
                     </h2>
 
-                    <% if(gameData.platforms){ %>
+                    <% if(gameData.platforms && gameData.platforms.length > 0){ %>
                         <ul>
                             <% for(let platform of gameData.platforms) { %>
                                 <li class="colorful-text-stat">
-                                    <span class="text-body"><%= platform.name %></span>
+                                    <span class="text-white"><%= platform.name %></span>
                                 </li>
                             <% } %>
                         </ul>
@@ -102,26 +102,31 @@
             Characters
         </h2>
 
+        <% if(gameData.characters && gameData.characters.length > 0){ %>
         <div class="row">
             <div class="col-md-6 text-center">
                 <ul>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <% for(let i = 0; i < gameData.characters.length; i++) {
+                        if(i % 2 == 0){ %>
+                            <li class="colorful-text-stat"><span class="text-white"><%= gameData.characters[i].name %></span></li>
+                        <% } 
+                    } %>
                 </ul>
             </div>
             <div class="col-md-6 text-center">
                 <ul>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
-                    <li class="colorful-text-stat"><span class="text-body">Lorem ipsum dolor sit amet.</span></li>
+                    <% for(let i = 0; i < gameData.characters.length; i++) {
+                        if(i % 2 != 0){ %>
+                            <li class="colorful-text-stat"><span class="text-white"><%= gameData.characters[i].name %></span></li>
+                        <% } 
+                    } %>
                 </ul>
             </div>
+
         </div>
+        <% }else{ %>
+            <p class="text-center">No Data Found</p>
+        <% } %>
     </div>
 
     <!-- ROW FOUR >> Websites -->
@@ -130,12 +135,10 @@
             Websites
         </h2>
         <div class="d-flex justify-content-center">
-            <ul>
-                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
-                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
-                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
-                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
-                <li class="colorful-text"><a class="colorful-text" href="LINK_HERE">Lorem ipsum dolor sit amet.</a></li>
+            <ul class="text-center">
+                <% for(let site of gameData.websites){ %>
+                    <li class="colorful-text"><a class="colorful-text" href="<%= site.url %>"><%= site.url %></a></li>
+                <% } %>
             </ul>
         </div>
      </div>
@@ -145,9 +148,12 @@
         <h2 class="card-title text-center colorful-text">
             Screenshots
         </h2>
-        <div class="card border-0">
-            <img src="" alt="">
-            <p>There may be images here</p>
+        <div class="row d-flex justify-content-center">
+            <% for(let shot of gameData.screenshots){ %>
+                <div class="col-4 d-flex justify-content-center">
+                    <img class="screenshot m-2" src="<%= shot.url.replace(`t_thumb`, `t_720p`) %>" alt="">
+                </div>
+            <% } %>
         </div>
      </div>
 
@@ -157,35 +163,35 @@
             Similar Games
         </h2>
     </div>
-     <% // for(let game of gameData) { %>
-        <a href="/game/<%= // game.game_id%>" class="unstyled-link text-decoration-none">
-            <div class="card mb-2">
+     <% for(let similar of gameData.similars) { %>
+        <a href="/game/<%= similar.game_id%>" class="results unstyled-link text-decoration-none">
+            <div class="card mb-2 border-0">
                 <div class="row">
                     <div class="col-md-2">
-                        <img src='<%= // game.cover.replace("t_thumb", "t_720p")%>' alt="" class="card-img">
+                        <img src='<%= similar.url.replace("t_thumb", "t_720p") %>' alt="" class="card-img rounded-end-0">
                     </div>
                     <div class="col-md-10">
                         <div class="card-body">
                             <h5 class="card-title colorful-text">
-                                <% // if(game.name){ %>
-                                    <%= // game.name %>
-                                <% // }else{ %>
-                                    Game Name
-                                <% // } %>
+                                <% if(similar.name){ %>
+                                    <%= similar.name %>
+                                <% }else{ %>
+                                    No Name
+                                <% } %>
                             </h5>
                             <p class="card-text">
-                                <% // if(game.summary){ %>
-                                    <%= // game.summary %>
-                                <% // }else{ %>
+                                <% if(similar.summary){ %>
+                                    <%= similar.summary %>
+                                <% }else{ %>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam labore odio molestias quis reprehenderit alias perferendis inventore neque corrupti necessitatibus velit magnam laboriosam nobis, beatae natus voluptatem illo? Quasi qui ex officia illum enim, velit dolores veritatis, amet modi sint labore expedita, vero nihil voluptatibus autem cupiditate cum a architecto placeat nostrum. Iste architecto quod amet, quisquam voluptates magnam labore sapiente debitis iure vitae distinctio earum aut consequuntur alias molestiae ea cumque quasi facilis minus eum id. Perferendis, dolor culpa?
-                                <% // } %>
+                                <% } %>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </a>
-    <% // } %>
+    <% } %>
 </div>
 
 <%- include("partials/footer.ejs") %>

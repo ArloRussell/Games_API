@@ -10,17 +10,17 @@ async function getSimilar(req, res){
     }
 }
 
-// async function getSimilarById(req, res){
-//     try{
-//         const similar = await Similar.getSimilarById(req.params.id);
-//         if(similar){
-//             res.status(200).json(similar);
-//         }else{
-//             res.status(404).json({error: "Game not found"});
-//         }
-//     }catch(err){
-//         res.status(500).json({error: "Failed to Fetch Similar " + err});
-//     }
-// }
+async function getSimilarById(req, res){
+    try{
+        const similar = await Similar.getSimilarById(req.params.id);
+        if(similar){
+            res.status(200).json(similar);
+        }else{
+            res.status(404).json({error: "Game not found"});
+        }
+    }catch(err){
+        res.status(500).json({error: "Failed to Fetch Similar " + err});
+    }
+}
 
-module.exports = {getSimilar};
+module.exports = {getSimilar, getSimilarById};
